@@ -1,50 +1,61 @@
 #include <iostream>
 using namespace std;
 
-class Distance {
+class Distance
+{
 private:
-    int km;
-    int m;
+    int kilometers;
+    float meters;
 
 public:
-    Distance() {
-        km = 0;
-        m = 0;
+    Distance() : kilometers(0), meters(0.0) {}
+    Distance(int km, float m) : kilometers(km), meters(m) {}
+
+    void getdist()
+    {
+        cout << "\nEnter kilometers: ";
+        cin >> kilometers;
+        cout << "Enter meters: ";
+        cin >> meters;
     }
 
-    Distance(int k, int me) {
-        km = k;
-        m = me;
+    void showdist() const
+    {
+        cout << kilometers << " km " << meters << " m";
     }
 
-    Distance operator - (Distance d) {
-        int total1 = km * 1000 + m;
-        int total2 = d.km * 1000 + d.m;
-        int diff = total1 - total2;
+    Distance operator-(Distance d2) const
+    {
+        int km = kilometers - d2.kilometers;
+        float m = meters - d2.meters;
 
-        if (diff < 0)
-            diff = -diff;
+        if (m < 0.0)
+        {                // meters negative bhayo bhane
+            m += 1000.0; // 1km udhaar liney
+            km -= 1;
+        }
 
-        int new_km = diff / 1000;
-        int new_m = diff % 1000;
-
-        return Distance(new_km, new_m);
-    }
-
-    void print() {
-        cout << km << " kilometers and " << m << " meters" << endl;
+        return Distance(km, m);
     }
 };
 
-int main() {
-    Distance dist1(5, 700);
-    Distance dist2(3, 850);
-    Distance dist3;
+int main()
+{
+    Distance dist1, dist3;
+    dist1.getdist();
 
+    Distance dist2(3, 750.5);
     dist3 = dist1 - dist2;
 
-    cout << "Difference between two distances: ";
-    dist3.print();
+    cout << "\ndist1 = ";
+    dist1.showdist();
+    cout << endl;
+    cout << "dist2 = ";
+    dist2.showdist();
+    cout << endl;
+    cout << "dist3 = ";
+    dist3.showdist();
+    cout << endl;
 
     return 0;
 }
