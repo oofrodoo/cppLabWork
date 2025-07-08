@@ -63,7 +63,7 @@ int main()
     Distance d1, d3, d4;
     d1.getdist();
 
-    Distance d2(3, 750.5);
+    Distance d2(1, 350);
 
     d3 = d1 + d2;
     d4 = d1 - d2;
@@ -78,9 +78,9 @@ int main()
     d4.showdist();
 
     if (d1 == d2)
-        cout << "\n\nd1 and d2 are equal.\n";
+        cout << "\n\nd1 & d2 are equal.\n";
     else
-        cout << "\n\nd1 and d2 are not equal.\n";
+        cout << "\n\nd1 & d2 are not equal.\n";
 
     return 0;
 }

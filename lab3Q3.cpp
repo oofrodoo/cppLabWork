@@ -24,20 +24,20 @@ public:
 
 int main()
 {
-    String s1 = "hello";
-    String s2 = "user";
+    String s1 = "yes";
+    String s2 = "no";
     String s3;
 
-    cout << "\nEnter 'hello' or 'user': ";
+    cout << "\nEnter 'yes' or 'no': ";
     s3.getstr();
 
     if (s3 == s1)
     {
-        cout << "You typed hello\n";
+        cout << "You typed yes\n";
     }
     else if (s3 == s2)
     {
-        cout << "You typed user\n";
+        cout << "You typed no\n";
     }
     else
     {

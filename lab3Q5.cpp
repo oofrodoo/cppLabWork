@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-const int LIMIT = 100;
+const int LIMIT = 10;
 
 class IntArray
 {

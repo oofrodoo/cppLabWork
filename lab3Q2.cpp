@@ -44,18 +44,15 @@ int main()
     Distance dist1, dist3;
     dist1.getdist();
 
-    Distance dist2(3, 750.5);
+    Distance dist2(3, 750.3);
     dist3 = dist1 - dist2;
 
     cout << "\ndist1 = ";
     dist1.showdist();
-    cout << endl;
-    cout << "dist2 = ";
+    cout << "\ndist2 = ";
     dist2.showdist();
-    cout << endl;
-    cout << "dist3 = ";
+    cout << "\ndist3 = ";
     dist3.showdist();
-    cout << endl;
 
     return 0;
 }
