@@ -1,15 +1,3 @@
-/*
-2. Create a C++ program that has the following:
-a. A class called First with data members book number, book name and member
-functions getdata and putdata.
-b. A class, Second, with data members author name and publisher and members
-getdata and showdata.
-c. Derive a class, Third, from the first and second with data members, number of
-pages and year of publica
-on.
-d. Display all this information using an array of objects of the third class.
-*/
-
 #include <iostream>
 using namespace std;
 
@@ -17,7 +5,7 @@ class First
 {
 protected:
     int book_no;
-    string book_name;
+    char book_name[50]; // changed from string to char array
 
 public:
     void getdata()
@@ -26,7 +14,7 @@ public:
         cin >> book_no;
         cin.ignore();
         cout << "Enter book name: ";
-        getline(cin, book_name);
+        cin.getline(book_name, 50);
     }
 
     void putdata()
@@ -39,16 +27,16 @@ public:
 class Second
 {
 protected:
-    string author_name;
-    string publisher;
+    char author_name[50];
+    char publisher[50];
 
 public:
     void getdata()
     {
         cout << "Enter author name: ";
-        getline(cin, author_name);
+        cin.getline(author_name, 50);
         cout << "Enter publisher name: ";
-        getline(cin, publisher);
+        cin.getline(publisher, 50);
     }
 
     void showdata()
