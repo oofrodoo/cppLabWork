@@ -40,14 +40,7 @@ private:
 public:
     void getdata()
     {
-        cout << "Enter name: ";
-        cin.getline(name, 50);
-
-        cout << "Enter roll number: ";
-        cin >> roll_no;
-
-        cout << "Enter sex (M/F): ";
-        cin >> sex;
+        basic_info::getdata(); // Reuse base class input
 
         cout << "Enter height (in cm): ";
         cin >> height;
