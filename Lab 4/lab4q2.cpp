@@ -5,94 +5,89 @@ class First
 {
 protected:
     int book_no;
-    char book_name[50]; // changed from string to char array
+    char book_name[50];
 
 public:
     void getdata()
     {
-        cout << "Enter book number: ";
+        cout << "Book No: ";
         cin >> book_no;
         cin.ignore();
-        cout << "Enter book name: ";
+        cout << "Book Name: ";
         cin.getline(book_name, 50);
     }
 
     void putdata()
     {
-        cout << "Book Number   : " << book_no << endl;
-        cout << "Book Name     : " << book_name << endl;
+        cout << "Book No   : " << book_no << endl;
+        cout << "Book Name : " << book_name << endl;
     }
 };
 
 class Second
 {
 protected:
-    char author_name[50];
-    char publisher[50];
+    char author[50], publisher[50];
 
 public:
     void getdata()
     {
-        cout << "Enter author name: ";
-        cin.getline(author_name, 50);
-        cout << "Enter publisher name: ";
+        cout << "Author    : ";
+        cin.getline(author, 50);
+        cout << "Publisher : ";
         cin.getline(publisher, 50);
     }
 
     void showdata()
     {
-        cout << "Author Name   : " << author_name << endl;
-        cout << "Publisher     : " << publisher << endl;
+        cout << "Author    : " << author << endl;
+        cout << "Publisher : " << publisher << endl;
     }
 };
 
 class Third : public First, public Second
 {
-private:
-    int pages;
-    int year;
+    int pages, year;
 
 public:
     void getdata()
     {
         First::getdata();
         Second::getdata();
-        cout << "Enter number of pages: ";
+        cout << "Pages     : ";
         cin >> pages;
-        cout << "Enter year of publication: ";
+        cout << "Year      : ";
         cin >> year;
         cin.ignore();
     }
 
     void display()
     {
-        cout << "\nBook Information\n";
+        cout << "\n--- Book Info ---\n";
         First::putdata();
         Second::showdata();
-        cout << "Pages         : " << pages << endl;
-        cout << "Year Published: " << year << endl;
+        cout << "Pages     : " << pages << endl;
+        cout << "Year      : " << year << endl;
     }
 };
 
 int main()
 {
     int n;
-    cout << "Enter number of books: ";
+    cout << "How many books? ";
     cin >> n;
     cin.ignore();
 
-    Third books[100];
-
+    Third b[100];
     for (int i = 0; i < n; i++)
     {
-        cout << "\nEnter details for book " << i + 1 << ":\n";
-        books[i].getdata();
+        cout << "\nBook " << i + 1 << ":\n";
+        b[i].getdata();
     }
 
     for (int i = 0; i < n; i++)
     {
-        cout << "\nDisplaying details for book " << i + 1 << ":\n";
-        books[i].display();
+        b[i].display();
     }
 
     return 0;
