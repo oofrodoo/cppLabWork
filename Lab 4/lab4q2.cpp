@@ -76,7 +76,7 @@ int main()
     int n;
     cout << "How many books? ";
     cin >> n;
-    cin.ignore();
+    // cin.ignore();
 
     Third b[100];
     for (int i = 0; i < n; i++)

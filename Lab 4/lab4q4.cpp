@@ -22,6 +22,7 @@ public:
     {
         cout << "Area: N/A" << endl;
     }
+    virtual ~SHAPE() {}
 };
 
 class TRIANGLE : public SHAPE
